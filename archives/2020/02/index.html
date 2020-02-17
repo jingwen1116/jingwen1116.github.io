@@ -50,6 +50,22 @@
 		</hgroup>
 		
 
+		<div id="he-plugin-standard"></div>
+<script>
+WIDGET = {
+  CONFIG: {
+    "layout": 2,
+    "width": "230",
+    "height": "270",
+    "background": 5,
+    "dataColor": "4A4A4A",
+    "borderRadius": 5,
+    "key": "59e38c0b435d471ebda7d2369d3af011"
+  }
+}
+</script>
+<script src="https://widget.heweather.net/standard/static/js/he-standard-common.js?v=1.1"></script>
+
 		<nav class="header-menu">
 			<ul>
 			
@@ -61,6 +77,25 @@
 	        
 			</ul>
 		</nav>
+		
+				<div id="hitokoto"style="font-size:16px;color:red;">:D 获取中...</div>
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<!--End-->
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText = "谚语："+data.hitokoto;
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+</script>
+		
 		<nav class="header-smart-menu">
     		
     			
@@ -76,12 +111,16 @@
     			
             
 		</nav>
+		
+		
 		<nav class="header-nav">
 			<div class="social">
 				
 			</div>
 		</nav>
-	</header>		
+	</header>
+
+	
 </div>
 
     </div>
