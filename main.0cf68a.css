@@ -249,9 +249,10 @@ body{
 	color:#333;
 	/* background-color:#fff; */
 	min-height:100%;
-	background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('/img/background.jpg') no-repeat 0% 0% / cover;
+	background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('/img/3.jpg') repeat-x 0% 0% / cover;
 	
 	}
+
 
 body{
 	overflow-y:hidden;/* background:#eaeaea */
