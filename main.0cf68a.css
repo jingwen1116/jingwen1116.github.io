@@ -325,10 +325,19 @@ body{
 	/* background-color:#fff; */
 	min-height:100%;
 	background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),url('/img/3.jpg') repeat-x 0% 0% / cover;
-	
+	    cursor: url('/img/jiantou.ico'), default;
 	}
 
 
 body{
 	overflow-y:hidden;/* background:#eaeaea */
+}
+
+
+
+
+
+/* 因为超链接默认情况下是：cursor: pointer; 显示为手，这里进行设置 */
+a {
+    cursor: url('/img/p.ico'), default;
 }
