@@ -194,6 +194,114 @@ WIDGET = {
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SpringAop进阶" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/01/SpringAop%E8%BF%9B%E9%98%B6/">SpringAop进阶</a>
+    </h1>
+  
+
+        
+        
+
+
+<a href="/2020/03/01/SpringAop%E8%BF%9B%E9%98%B6/" class="archive-article-date">
+  	<time datetime="2020-03-01T13:32:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="AOP配置通知"><a href="#AOP配置通知" class="headerlink" title="AOP配置通知"></a>AOP配置通知</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--配置AOP--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">aop:config</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 配置切入点表达式 id属性用于指定表达式的唯一标识 expression属性用于指定表达式内容</span></span><br><span class="line"><span class="comment">        此标签写在aop:aspect标签内部只能当前切面可用</span></span><br><span class="line"><span class="comment">        他还可以写在aop:aspect外面 此时就变成所有标签可用</span></span><br><span class="line"><span class="comment">    --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">aop:pointcut</span> <span class="attr">id</span>=<span class="string">"pt1"</span> <span class="attr">expression</span>=<span class="string">"execution(* com.demo.service.impl.*.*(..))"</span>&gt;</span><span class="tag">&lt;/<span class="name">aop:pointcut</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--配置切面--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">aop:aspect</span> <span class="attr">id</span>=<span class="string">"logAdvice"</span> <span class="attr">ref</span>=<span class="string">"logger"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--配置前置通知 在切入点方法执行之前执行--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">aop:before</span> <span class="attr">method</span>=<span class="string">"beforePrintLog"</span> <span class="attr">pointcut-ref</span>=<span class="string">"pt1"</span>&gt;</span><span class="tag">&lt;/<span class="name">aop:before</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--配置后置通知 在切入点方法正常执行之后值 它和异常通知只能执行一个--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">aop:after-returning</span> <span class="attr">method</span>=<span class="string">"afterReturningPrintLog"</span> <span class="attr">pointcut-ref</span>=<span class="string">"pt1"</span> &gt;</span><span class="tag">&lt;/<span class="name">aop:after-returning</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--配置异常通知 在切入点方法执行产生异常之后执行 它和后置通知只能执行一个--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">aop:after-throwing</span> <span class="attr">method</span>=<span class="string">"afterThrowingPrintLog"</span>  <span class="attr">pointcut-ref</span>=<span class="string">"pt1"</span>&gt;</span><span class="tag">&lt;/<span class="name">aop:after-throwing</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--配置最终通知 无论切入点方法是否正常执行他都会在其后面执行--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">aop:after</span> <span class="attr">method</span>=<span class="string">"afterPrintLog"</span> <span class="attr">pointcut-ref</span>=<span class="string">"pt1"</span>&gt;</span><span class="tag">&lt;/<span class="name">aop:after</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">aop:aspect</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">aop:config</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/03/01/SpringAop%E8%BF%9B%E9%98%B6/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Spring//" class="article-tag-list-link color2">Spring</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Spring/Aop//" class="article-tag-list-link color4">Aop</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/01/SpringAop%E8%BF%9B%E9%98%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+        <!-- 《添加版权声明 -->
+        
+            <!-- 《添加版权声明 -->
+<!--添加版权声明https://github.com/JoeyBling/hexo-theme-yilia-plus/commit/c1215e132f6d5621c5fea83d3c4f7ccbcca074a3-->
+
+
+<!-- #版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明 -->
+
+  <div class="declare" hidden="hidden"></div>
+
+<!-- 添加版权声明》 -->
+
+        
+        <!-- 添加版权声明》 -->
+  
     <article id="post-SpringAop" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -947,11 +1055,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+                <a href="javascript:void(0)" class="js-tag color4">hexo-img</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hexo-img</a>
+                <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
             
             <div class="clearfix"></div>
